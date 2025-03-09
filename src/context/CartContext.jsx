@@ -6,7 +6,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // 🔹 Fetch cart items from Supabase on page load
+  // Fetch cart items from Supabase on page load
   useEffect(() => {
     const fetchCart = async () => {
       const { data, error } = await supabase.from("cart").select("*");
@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
     fetchCart();
   }, []);
 
-  // 🔥 Add item to cart and save in Supabase
+  // Add item to cart and save in Supabase
   const addToCart = async (product) => {
     const existingItem = cart.find((item) => item.id === product.id);
     
@@ -33,13 +33,13 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // 🔥 Remove item from cart in Supabase
+  // Remove item from cart in Supabase
   const removeFromCart = async (productId) => {
     setCart(cart.filter((item) => item.id !== productId));
     await supabase.from("cart").delete().match({ id: productId });
   };
 
-  // 🔥 Clear cart in Supabase
+  // Clear cart in Supabase
   const clearCart = async () => {
     setCart([]);
     await supabase.from("cart").delete();

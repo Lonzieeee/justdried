@@ -8,8 +8,9 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Receipt from './pages/Receipt';
-import Login from './pages/Login';
+import AuthPage from './pages/AuthPage';
 import Footer from './components/Footer';
+
 import './styles/App.css';
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/receipt" element={<Receipt />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<AuthPage />} />
               </Routes>
             </div>
             <Footer />

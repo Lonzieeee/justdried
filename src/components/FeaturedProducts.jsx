@@ -2,7 +2,6 @@ import React from 'react';
 import { supabase } from '../supabase'; // Import Supabase client
 import '../styles/FeaturedProducts.css'; // Import styles
 
-// Imp
 const featuredProducts = [
   {
     id: 1,

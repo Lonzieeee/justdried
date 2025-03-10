@@ -3,11 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #8B4513; /* Earthy Brown */
+  background-color: #8B4513;
   color: white;
   position: sticky;
   top: 0;
-  /* width: 100%; */
+  width: 100%;
   z-index: 1000;
   }
   

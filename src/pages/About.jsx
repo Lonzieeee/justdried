@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { supabase } from '../supabase'; 
 import '../styles/About.css';
 import aboutImage from '../../public/assets/about.jpg';
 

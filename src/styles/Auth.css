@@ -1,15 +1,15 @@
 .auth-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #FFF8E1; /* Pale creamy yellow */
-    padding: 50px 0;
+    height: 100vh; /* Full viewport height */
+    background: #FFF8E1; 
+    padding: 0 20px; /* Added side padding for small screens */
 }
 
-/* Auth card with a light cream background and natural shadows */
 .auth-card {
-    background: #FAF3E0; /* Light, warm cream */
+    background: #FAF3E0; 
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,12 +17,14 @@
     max-width: 400px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
+    margin: auto; /* Ensures it's centered */
 }
 
 /* Tab switcher styles */
 .auth-tabs {
     display: flex;
     justify-content: center;
+    gap: 10px; /* Adds spacing between buttons */
     margin-bottom: 1rem;
 }
 
@@ -34,16 +36,16 @@
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s;
-    color: #8B4513; /* Dried fruit brown */
+    color: #8B4513; 
 }
 
 .auth-tabs button.active {
-    border-color: #8B4513; /* Brown active indicator */
+    border-color: #8B4513;
 }
 
-/* Heading style with an olive green hue */
+/* Heading style */
 .auth-card h2 {
-    color: #556B2F; /* Olive green */
+    color: #556B2F; 
     margin-bottom: 1rem;
 }
 
@@ -51,26 +53,25 @@
 .auth-card form {
     display: flex;
     flex-direction: column;
+    gap: 10px; /* Adds spacing between form elements */
 }
 
 .auth-card input {
     padding: 0.75rem;
-    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
 }
 
-/* Button styling using olive green for a natural vibe */
+/* Button styling */
 .auth-card button {
     padding: 0.75rem;
-    background-color: #556B2F; /* Dark olive green */
+    background-color: #556B2F; 
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 1rem;
     transition: background-color 0.2s;
 }
 
@@ -79,39 +80,33 @@
     cursor: not-allowed;
 }
 
-/* Divider styles with a natural brown line */
+/* Divider styles */
 .divider {
     margin: 1rem 0;
     position: relative;
     font-size: 0.9rem;
     color: #8B4513;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .divider:before,
 .divider:after {
     content: '';
-    position: absolute;
-    top: 50%;
-    width: 40%;
+    flex: 1;
     height: 1px;
     background: #8B4513;
+    margin: 0 10px;
 }
 
-.divider:before {
-    left: 0;
-}
-
-.divider:after {
-    right: 0;
-}
-
-/* Google button styled in a golden yellow hue */
+/* Google button */
 .google-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.75rem;
-    background-color: #DAA520; /* Goldenrod yellow */
+    background-color: #DAA520;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -121,8 +116,8 @@
     transition: background-color 0.2s;
 }
 
-button:hover {
-    background-color: #C8962B; /* Slightly darker golden tone */
+.google-btn:hover {
+    background-color: #C8962B;
 }
 
 .google-logo {
@@ -131,13 +126,13 @@ button:hover {
     margin-right: 0.5rem;
 }
 
-/* Error message style */
+/* Error message */
 .error {
-    color: #B22222; /* Firebrick red */
+    color: #B22222;
     margin-bottom: 1rem;
 }
 
-/* Smooth fade-in animation */
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;

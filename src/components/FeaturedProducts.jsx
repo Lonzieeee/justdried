@@ -1,13 +1,13 @@
 import React from 'react';
-import { supabase } from '../supabase'; // Import Supabase client
-import '../styles/FeaturedProducts.css'; // Import styles
+import { supabase } from '../supabase'; 
+import '../styles/FeaturedProducts.css'; 
 
 const featuredProducts = [
   {
     id: 1,
     name: 'Roasted Peanuts (Groundnuts)',
     price: 'Ksh 250/500g',
-    // Instead of importing from a URL, just store the filename from Supabase storage
+
     image: 'peanutsjpg.jpg', 
     description: 'Rich in protein and healthy fats, great for heart health.',
   },
@@ -55,7 +55,7 @@ const featuredProducts = [
   },
 ];
 
-// Helper function to get the public URL for Supabase storage assets
+
 const getImageUrl = (imagePath) => {
   // If the imagePath is already a full URL (for local assets imported via webpack), return it as-is.
   if (typeof imagePath === 'string' && imagePath.startsWith('http')) {

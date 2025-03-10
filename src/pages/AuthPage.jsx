@@ -22,7 +22,7 @@ const AuthPage = () => {
     if (error) {
       setError(error.message);
     } else {
-      alert('Login successful!');
+      alert('Welcome back!');
       navigate('/'); // Redirect to home page after successful login
     }
     setLoading(false); //reset loading state

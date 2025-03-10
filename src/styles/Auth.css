@@ -108,7 +108,7 @@
     padding: 0.75rem;
     background-color: #DAA520;
     border: none;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     cursor: pointer;
     width: 100%;
     color: #fff;

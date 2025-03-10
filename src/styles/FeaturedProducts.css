@@ -3,18 +3,7 @@
   text-align: center;
 }
 .products-grid {
-  /* display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(2, 1fr); */
-  /* display: flex;
-  flex-direction: row; */
-  /* gap: 20px;                
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: auto;         Enable horizontal scrolling if needed */
-  /* padding: 1rem; */
-  /* display: flex;
-  flex-direction: row; */
+ 
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(2, 1fr);

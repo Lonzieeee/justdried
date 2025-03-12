@@ -16,32 +16,26 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
 
   // Fetch products from Supabase
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      const { data, error } = await supabase.from("products").select("*");
-      if (error) {
-        console.error("Error fetching products:", error);
-        // Optionally setProducts([]) or handle error UI
-      } else if (data) {
-        // Pre-compute the image URL
-        const productsWithUrls = data.map((product) => {
-          const { data: urlData } = supabase.storage
-            .from("product-images")
-            .getPublicUrl(product.image);
-          return {
-            ...product,
-            imageUrl: urlData?.publicUrl ?? "/path/to/default.jpg",
-          };
-        });
-        setProducts(productsWithUrls);
-      }
-      setLoading(false);
-    };
+  const fetchProducts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("products")
+      .select("id, name, price, description, category, image");
   
-    // **Invoke the function** so it actually runs
-    fetchProducts();
-  }, []);
+    if (error) {
+      console.error("Error fetching products:", error);
+      setProducts([]);
+    } else {
+      // Fetch all public URLs at once
+      const updatedProducts = data.map((product) => ({
+        ...product,
+        imageUrl: supabase.storage.from("product-images").getPublicUrl(product.image).data.publicUrl ?? "/path/to/default.jpg",
+      }));
+  
+      setProducts(updatedProducts);
+    }
+    setLoading(false);
+  };
   
   // Filter products by category
   const filteredProducts = selectedCategory
